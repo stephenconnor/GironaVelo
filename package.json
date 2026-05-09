@@ -4,12 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prebuild": "npm run readme:update",
     "build": "ng build",
-    "routes:update": "python update_routes.py",
-    "routes:update:copy": "python update_routes.py --generate-descriptions",
+    "readme:update": "python update_readme.py",
+    "routes:update": "python update_routes.py && npm run readme:update",
+    "routes:update:copy": "python update_routes.py --generate-descriptions && npm run readme:update",
     "routes:preview": "python update_routes.py --dry-run",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "prebuild:gh-pages": "npm run readme:update",
     "build:gh-pages": "ng build --configuration=github-pages",
     "deploy": "npm run build:gh-pages && npx gh-pages -d dist/cycling-routes/browser"
   },
