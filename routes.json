@@ -65,40 +65,42 @@
           "gpxFile": "assets/gpx_files/longRoutes/COURSE_LesPlanesdHostoles_Osor_SaintHilariSacalm.gpx"
         },
         {
-          "title": "Olot El Far Coll DUria",
+          
+          "id": "lr6",
+          "title": "Olot → El Far → Coll d’Úria",
           "image": "assets/gpx_files/longRoutes/COURSE_OlotElFarCollDUria_map.png",
           "distance": 143.7,
           "ascent": 1911,
           "maxAltitude": 1102,
-          "description": "",
-          "detailedDescription": "",
+          "description": "This route is a high-quality volcanic-region climbing loop through the Garrotxa area of Catalunya, linking together two of the region’s most respected inland climbs: El Far and Coll d’Úria. Compared to the Girona coastal rides, this route is more mountainous, more sustained, and more climber-oriented. It has a distinctly quiet inland Catalunya feel, with a high-aerobic climbing character and a hidden pro-training-road atmosphere.",
+          "detailedDescription": "1. Olot & Volcanic Region Opening. The ride begins around Olot, an area famous for its volcanic landscapes, quiet mountain roads, and dense forest terrain. The opening terrain includes rolling roads through the Garrotxa region, gradual elevation gain, and fast valley riding before the major climbs begin. This first phase feels smooth, scenic, and controlled, but the route escalates quickly as the climbing intensifies. 2. El Far. El Far is one of the signature climbs of inland Catalunya and forms a major highlight of the route. The climb features a long sustained ascent with scenic cliffside upper sections and gradients generally ranging between 4–7%, making it steadier than many coastal climbs. What makes El Far special is its combination of forest climbing, open exposed viewpoints, and highly rhythmic pacing. It is particularly well suited to tempo climbing, threshold intervals, and long seated efforts. The upper sections near Santuari del Far provide spectacular panoramic views, dramatic rock formations, and one of the finest viewpoints in the Girona region. 3. Coll d’Úria. Coll d’Úria is the more rugged and isolated climbing section of the route. It features a longer remote mountain ascent with more variable gradients and quiet forest roads. Compared to El Far, it is less famous, more isolated, and has a purer mountain-road climbing feel. The climb rewards controlled pacing, cadence discipline, and strong aerobic efficiency over extended periods. 4. Descents. Descents throughout the route are long, fast, and flowing. Highlights include technical upper mountain sections and high-speed lower valley exits. Unlike the Costa Brava coastal roads, these inland mountain roads are generally wider, with more predictable cornering rhythm and easier momentum preservation. 5. Overall Ride Character. This is one of the most scenic inland mountain routes and one of the purest climber-oriented rides in the collection. It feels remote, rhythmic, and purpose-built for endurance climbers. The route rewards patience, fueling discipline, and sustainable power output over long periods. Olot → El Far → Coll d’Úria delivers a true Catalunya volcanic mountain epic experience, combining deep forest climbing, long sustained ascents, quiet mountain roads, and a pure endurance climbing rhythm.",
           "extraImage": "assets/gpx_files/longRoutes/COURSE_OlotElFarCollDUria_profile.png",
-          "gpxFile": "assets/gpx_files/longRoutes/COURSE_OlotElFarCollDUria.gpx",
-          "id": "lr6"
+          "gpxFile": "assets/gpx_files/longRoutes/COURSE_OlotElFarCollDUria.gpx"
         },
         {
+          "id": "lr7",
           "title": "Olot Loop",
           "image": "assets/gpx_files/longRoutes/COURSE_OlotLoop_map.png",
           "distance": 114.8,
           "ascent": 1410,
           "maxAltitude": 629,
-          "description": "",
-          "detailedDescription": "",
+          "description": "This route is a classic volcanic-region endurance loop centered around the inland mountain roads surrounding Olot in the heart of the Garrotxa region. Compared to larger mountain-stage routes, this ride is more compact, more rhythm-based, and less extreme individually, while still becoming highly demanding over time. It is a quintessential inland Catalunya climber’s route, designed for aerobic endurance and quiet mountain-road training.",
+          "detailedDescription": "1. Olot & Garrotxa Opening. The route begins around Olot, a region famous for volcanic landscapes, dense forests, quiet mountain roads, and smooth flowing climbing terrain. The opening kilometers feature rolling valley roads, gradual elevation gain, and fast warm-up terrain. Initially, the riding feels calm, scenic, and efficient before gradually transitioning into more mountainous terrain with longer sustained climbs. 2. Garrotxa Mountain Roads. The defining terrain of this ride consists of continuous medium-length climbing, forest-covered ascents, and rhythmic gradients. Typical climbs range from 3–8 km with gradients around 4–7%, including occasional steeper ramps on transitions. This terrain is ideal for tempo climbing, aerobic endurance, and sustainable seated efforts over long durations. 3. Volcanic Region Elevation Changes. Unlike the sharper rhythm changes of the Girona coastal rides, the terrain here is smoother, more consistent, and progressively flowing. Climbs feel natural and uninterrupted, creating long periods under aerobic load with fewer explosive changes in rhythm. This is classic climber-friendly “diesel engine” terrain, rewarding riders who can sustain steady power output. 4. Descents. Descents are long, flowing, and generally less technical than those found along the coast. Key characteristics include predictable corners, good visibility, and extended high-speed sections. These descents allow efficient recovery and support a consistently high rolling speed throughout the route. 5. Overall Impression. This route is highly refined, exceptionally rideable, and quietly difficult. While it lacks famous summit finishes or brutally steep gradients, it delivers continuous climbing quality, exceptional road rhythm, and deep endurance fatigue over time. The ride ultimately feels much bigger than the raw numbers suggest and is deeply satisfying for experienced climbers seeking sustained aerobic mountain riding.",
           "extraImage": "assets/gpx_files/longRoutes/COURSE_OlotLoop_profile.png",
-          "gpxFile": "assets/gpx_files/longRoutes/COURSE_OlotLoop.gpx",
-          "id": "lr7"
+          "gpxFile": "assets/gpx_files/longRoutes/COURSE_OlotLoop.gpx"
         },
         {
-          "title": "Rocacorba(Girona Banyoles Rocacorba)",
+          
+          "id": "lr8",
+          "title": "Rocacorba (Girona → Banyoles → Rocacorba)",
           "image": "assets/gpx_files/longRoutes/COURSE_Rocacorba(GironaBanyolesRocacorba)_map.png",
           "distance": 82.7,
           "ascent": 1368,
           "maxAltitude": 962,
-          "description": "",
-          "detailedDescription": "",
+          "description": "This route is a true Girona cycling institution — a long inland loop built around the legendary ascent of Rocacorba. Among cyclists living and training around Girona, Rocacorba is more than just a climb: it is a benchmark, a rite of passage, and one of the purest climbing tests in the region. The route combines fast valley roads, rolling Banyoles terrain, quiet inland Catalunya landscapes, and one long defining summit effort. Local riders often use the challenge of climbing Rocacorba in their age plus ten minutes as a benchmark target.",
+          "detailedDescription": "1. Girona Departure – Fast Tempo Terrain. Leaving Girona, the route begins on wide inland roads, gentle rollers, and fast agricultural valleys. This opening section feels smooth and highly aerobic, making it ideal for group riding and controlled pacing. The terrain allows high average speeds and an efficient warm-up before the major climbing begins. 2. Banyoles Region – Transition Zone. Approaching Banyoles, the route gradually changes character as roads narrow, rollers become steeper, and elevation gain accumulates more noticeably. This area has a distinctly rural Catalunya atmosphere and a quiet endurance-training feel. The roads are highly regarded among Girona cyclists because they flow naturally through the terrain, encourage smooth seated climbing, and rarely become excessively steep. 3. Rocacorba – The Main Event. Rocacorba is one of the most respected climbs in European cycling culture and the defining feature of the route. The climb became legendary because professional riders frequently use it for FTP testing and benchmark efforts. Its gradients are consistent enough for pacing while being long enough to expose weaknesses honestly. Rocacorba rewards patience, cadence control, and disciplined pacing, with early overexertion heavily punished later in the climb. 4. Rocacorba Climb Breakdown. The lower slopes begin sheltered under trees with smooth flowing gradients and a relatively forgiving rhythm, encouraging seated climbing and steady aerobic pacing. The middle section becomes more sustained, mentally demanding, and highly aerobic as fatigue quietly accumulates. Riders settle into prolonged threshold efforts while the road maintains a continuous rhythm. In the final kilometers, the climb changes dramatically with narrower roads, steeper ramps, and increased exposure. These upper sections feel significantly harder than the average gradient suggests and are often psychologically decisive. This is where pacing discipline becomes critical and stronger climbers separate themselves. 5. Descending. The Rocacorba descent is fast and technical in places, particularly in the narrow upper sections where the road surface can be rough and requires concentration and confident bike handling. Lower down, the roads open up, speeds increase significantly, and the descent becomes smoother and more flowing. The return toward Girona is fast, aerodynamic, and heavily influenced by accumulated fatigue. 6. Overall Impression. This is one of the most iconic Girona rides and one of the purest climbing tests in the entire collection. The route feels purpose-built for cyclists, structured entirely around one great climb. It rewards patience, aerobic efficiency, and disciplined climbing while delivering a deeply satisfying experience when ridden well.",
           "extraImage": "assets/gpx_files/longRoutes/COURSE_Rocacorba(GironaBanyolesRocacorba)_profile.png",
-          "gpxFile": "assets/gpx_files/longRoutes/COURSE_Rocacorba(GironaBanyolesRocacorba).gpx",
-          "id": "lr8"
+          "gpxFile": "assets/gpx_files/longRoutes/COURSE_Rocacorba(GironaBanyolesRocacorba).gpx"
         },
         {
           "title": "Sant Hilari Sacalm",
