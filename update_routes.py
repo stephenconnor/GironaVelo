@@ -16,6 +16,8 @@ import os
 import re
 import ssl
 import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -33,6 +35,11 @@ PUBLIC_ROUTES_JSON = ROOT / "public" / "routes.json"
 
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
 WEB_SEARCH_TOOL = os.environ.get("OPENAI_WEB_SEARCH_TOOL", "web_search")
+OPENAI_COPY_RETRIES = int(os.environ.get("OPENAI_COPY_RETRIES", "4"))
+OPENAI_COPY_RETRY_DELAY_SECONDS = int(
+    os.environ.get("OPENAI_COPY_RETRY_DELAY_SECONDS", "30")
+)
+OPENAI_COPY_DELAY_SECONDS = int(os.environ.get("OPENAI_COPY_DELAY_SECONDS", "5"))
 
 
 def web_path(path):
@@ -232,8 +239,7 @@ def openai_route_copy(route, points):
     if os.environ.get("OPENAI_VERIFY_SSL", "1") == "0":
         ssl_context = ssl._create_unverified_context()
 
-    with urllib.request.urlopen(request, timeout=120, context=ssl_context) as response:
-        data = json.loads(response.read().decode("utf-8"))
+    data = post_openai_request(request, ssl_context)
 
     text = data.get("output_text")
     if not text:
@@ -257,6 +263,45 @@ def openai_route_copy(route, points):
     }
 
 
+def retry_after_seconds(error):
+    retry_after = error.headers.get("Retry-After")
+
+    if not retry_after:
+        return OPENAI_COPY_RETRY_DELAY_SECONDS
+
+    try:
+        return max(1, int(float(retry_after)))
+    except ValueError:
+        return OPENAI_COPY_RETRY_DELAY_SECONDS
+
+
+def post_openai_request(request, ssl_context):
+    for attempt in range(1, OPENAI_COPY_RETRIES + 1):
+        try:
+            with urllib.request.urlopen(
+                request,
+                timeout=120,
+                context=ssl_context,
+            ) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as error:
+            body = error.read().decode("utf-8", errors="replace")
+
+            if error.code != 429 or attempt == OPENAI_COPY_RETRIES:
+                raise RuntimeError(
+                    f"OpenAI request failed with HTTP {error.code}: {body}"
+                ) from error
+
+            delay = retry_after_seconds(error)
+            print(
+                f"OpenAI rate limit hit; retrying in {delay}s "
+                f"({attempt}/{OPENAI_COPY_RETRIES})..."
+            )
+            time.sleep(delay)
+
+    raise RuntimeError("OpenAI request failed after retry attempts.")
+
+
 def merge_routes(args):
     data = load_routes_json()
     existing_index = existing_route_index(data)
@@ -265,6 +310,7 @@ def merge_routes(args):
 
     rebuilt = {"long": [], "short": []}
     generated_copy = 0
+    failed_copy = 0
 
     for category_id, gpx_path in scanned:
         existing = existing_index.get(normalize_key(gpx_path.stem))
@@ -279,11 +325,18 @@ def merge_routes(args):
 
         if args.generate_descriptions and needs_copy:
             print(f"Generating route copy: {route['title']}")
-            copy = openai_route_copy(route, points)
-            route["title"] = copy["title"]
-            route["description"] = copy["description"]
-            route["detailedDescription"] = copy["detailedDescription"]
-            generated_copy += 1
+            try:
+                copy = openai_route_copy(route, points)
+                route["title"] = copy["title"]
+                route["description"] = copy["description"]
+                route["detailedDescription"] = copy["detailedDescription"]
+                generated_copy += 1
+
+                if OPENAI_COPY_DELAY_SECONDS:
+                    time.sleep(OPENAI_COPY_DELAY_SECONDS)
+            except RuntimeError as error:
+                failed_copy += 1
+                print(f"Skipped route copy for {route['title']}: {error}")
 
         rebuilt[category_id].append(route)
 
@@ -306,11 +359,13 @@ def merge_routes(args):
         category["routes"] = routes
 
     if not args.dry_run:
-        with PUBLIC_ROUTES_JSON.open("w", encoding="utf-8", newline="\n") as file:
+        temporary_routes_json = PUBLIC_ROUTES_JSON.with_suffix(".json.tmp")
+        with temporary_routes_json.open("w", encoding="utf-8", newline="\n") as file:
             json.dump(data, file, indent=2, ensure_ascii=False)
             file.write("\n")
+        temporary_routes_json.replace(PUBLIC_ROUTES_JSON)
 
-    return len(scanned), generated_copy
+    return len(scanned), generated_copy, failed_copy
 
 
 def main():
@@ -339,10 +394,11 @@ def main():
     )
     args = parser.parse_args()
 
-    scanned_count, generated_copy = merge_routes(args)
+    scanned_count, generated_copy, failed_copy = merge_routes(args)
 
     print(f"Scanned GPX files: {scanned_count}")
     print(f"Generated descriptions: {generated_copy}")
+    print(f"Skipped descriptions: {failed_copy}")
     if args.dry_run:
         print("Dry run: public/routes.json was not changed.")
     else:
