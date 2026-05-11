@@ -31,7 +31,7 @@ An Angular + PrimeNG app for showcasing cycling routes, deployable on GitHub Pag
 | Coastal Route Alternative | 111.2 km | 2,169 m | 473 m |
 | Deeeep Deeeep Catalunya | 149.6 km | 1,870 m | 324 m |
 | Girona Coastal: St Grau & ElsÀngels | 111.4 km | 1,899 m | 476 m |
-| Girona Figueres St Pellaia | 145.1 km | 1,656 m | 343 m |
+| Girona → Figueres → Sant Pellaia | 145.1 km | 1,656 m | 343 m |
 | Les Planes d’Hostoles → Osor → Sant Hilari Sacalm | 123.7 km | 4,295 m | 818 m |
 | Olot Loop | 114.8 km | 1,410 m | 629 m |
 | Olot → El Far → Coll d’Úria | 143.7 km | 1,911 m | 1,102 m |
@@ -47,8 +47,8 @@ An Angular + PrimeNG app for showcasing cycling routes, deployable on GitHub Pag
 | --- | ---: | ---: | ---: |
 | Banyoles Loop Short | 49.5 km | 647 m | 327 m |
 | Hincapie Loop | 61.1 km | 890 m | 481 m |
-| Llora Constantin St Gregori(recovery) | 41.0 km | 315 m | 309 m |
-| Medinya→Cornella→Banyoles | 56.9 km | 512 m | 209 m |
+| Llorà → Constantins → Sant Gregori (Recovery) | 41.0 km | 315 m | 309 m |
+| Medinyà → Cornellà → Banyoles | 56.9 km | 512 m | 209 m |
 | Volta Puig | 31.0 km | 382 m | 322 m |
 
 ## Project Structure
