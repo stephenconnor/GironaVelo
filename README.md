@@ -16,9 +16,9 @@ An Angular + PrimeNG app for showcasing cycling routes, deployable on GitHub Pag
 
 | Category | Routes | Distance | Ascent |
 | --- | ---: | ---: | ---: |
-| Long Routes | 14 | 1672.2 km | 25,171 m |
+| Long Routes | 15 | 1803.0 km | 27,209 m |
 | Short Routes | 5 | 239.5 km | 2,746 m |
-| **Total** | **19** | **1911.7 km** | **27,917 m** |
+| **Total** | **20** | **2042.5 km** | **29,955 m** |
 
 ## Route Catalogue
 
@@ -31,6 +31,7 @@ An Angular + PrimeNG app for showcasing cycling routes, deployable on GitHub Pag
 | Coastal Route Alternative | 111.2 km | 2,169 m | 473 m |
 | Deeeep Deeeep Catalunya | 149.6 km | 1,870 m | 324 m |
 | Girona Coastal: St Grau & ElsÀngels | 111.4 km | 1,899 m | 476 m |
+| Girona Reverse Coastal | 130.8 km | 2,038 m | 479 m |
 | Girona → Figueres → Sant Pellaia | 145.1 km | 1,656 m | 343 m |
 | Les Planes d’Hostoles → Osor → Sant Hilari Sacalm | 123.7 km | 4,295 m | 818 m |
 | Olot Loop | 114.8 km | 1,410 m | 629 m |
