@@ -126,16 +126,9 @@ def existing_route_index(data):
     return index
 
 
-def next_route_id(routes, prefix):
-    highest = 0
-
-    for route in routes:
-        route_id = route.get("id", "")
-        match = re.fullmatch(rf"{prefix}(\d+)", route_id)
-        if match:
-            highest = max(highest, int(match.group(1)))
-
-    return f"{prefix}{highest + 1}"
+def normalize_route_ids(routes, prefix):
+    for index, route in enumerate(routes, start=1):
+        route["id"] = f"{prefix}{index}"
 
 
 def scan_gpx_files():
@@ -373,9 +366,7 @@ def merge_routes(args):
                 if route_key not in scanned_keys:
                     routes.append(route)
 
-        for route in routes:
-            if not route.get("id"):
-                route["id"] = next_route_id(routes, prefix)
+        normalize_route_ids(routes, prefix)
 
         category["routes"] = routes
 

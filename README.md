@@ -65,7 +65,7 @@ src/
 +-- assets/gpx_files/
 |   +-- longRoutes/
 |   +-- shortRoutes/
-+-- styles.scss
++-- styles.less
 +-- index.html
 public/
 +-- routes.json
@@ -119,6 +119,7 @@ npm run routes:update:copy
 | `npm run routes:preview` | Preview GPX route changes without writing routes.json. |
 | `npm run readme:update` | Regenerate this README from project metadata. |
 | `npm run build` | Build the Angular app. |
+| `npm run test:ci` | Run the Angular test suite once in headless Chrome. |
 | `npm run build:gh-pages` | Build the GitHub Pages version. |
 | `npm run deploy` | Build and publish the site to the gh-pages branch. |
 
@@ -137,7 +138,7 @@ Open `http://localhost:4200`.
 npm run deploy
 ```
 
-The deploy workflow refreshes this README, builds the GitHub Pages version, and publishes `dist/cycling-routes/browser` to the `gh-pages` branch.
+The deploy workflow builds the GitHub Pages version and publishes `dist/cycling-routes/browser` to the `gh-pages` branch. Run `npm run routes:update` or `npm run readme:update` first if route data or documentation needs refreshing.
 
 After the first deploy, go to **Settings -> Pages -> Branch: gh-pages -> Save**.
 
