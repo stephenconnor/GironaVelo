@@ -1,0 +1,8 @@
+{
+  "appId": "com.gironavelo.app",
+  "appName": "Girona Velo",
+  "webDir": "dist/cycling-routes/browser",
+  "server": {
+    "androidScheme": "https"
+  }
+}

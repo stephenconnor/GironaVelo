@@ -66,15 +66,15 @@
         </span>
       </button>
       @if (route.gpxFile) {
-        <a [href]="route.gpxFile" [download]="route.title + '.gpx'" class="gpx-download">
+        <button type="button" class="gpx-download" [disabled]="gpxDownloading" (click)="downloadGpx(route.gpxFile, route.title)">
           <div class="gpx-icon-wrapper">
             <i class="pi pi-download"></i>
           </div>
           <div class="gpx-text">
-            <span class="gpx-label">Download GPX</span>
-            <span class="gpx-sub">{{ route.title }}</span>
+            <span class="gpx-label">{{ gpxDownloading ? 'Preparing GPX…' : 'Download GPX' }}</span>
+            <span class="gpx-sub">{{ gpxDownloading ? 'Choose an app or save location' : route.title }}</span>
           </div>
-        </a>
+        </button>
       }
     </div>
   </p-panel>

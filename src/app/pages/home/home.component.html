@@ -14,7 +14,7 @@
   }
 
   @if (!vm.loading && !vm.error && vm.categories.length) {
-    <p-tabs [value]="vm.categories[0].id" class="routes-tabs">
+    <p-tabs [value]="navigation.activeCategory()" (valueChange)="selectCategory($event)" class="routes-tabs">
       <p-tablist>
         @for (cat of vm.categories; track cat.id) {
           <p-tab [value]="cat.id">

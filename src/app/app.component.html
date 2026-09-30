@@ -4,18 +4,31 @@
     <div class="header-inner">
       <div class="header-brand">
         <div class="brand-icon">
-          <i class="fa-solid fa-person-biking"></i>
+          <img src="assets/bike_icon.ico" alt="GironaVelo logo" />
         </div>
         <div class="brand-text">
           <span class="brand-name">GironaVelo</span>
           <span class="brand-tagline">Cycling Route Guide</span>
         </div>
       </div>
+      <nav class="desktop-nav" aria-label="Route categories">
+        <button type="button" [class.is-active]="navigation.activeCategory() === 'long'" (click)="selectCategory('long')">Long routes</button>
+        <button type="button" [class.is-active]="navigation.activeCategory() === 'short'" (click)="selectCategory('short')">Short routes</button>
+      </nav>
       <div class="header-badge">
         <i class="pi pi-map-marker"></i>
         <span>Ireland</span>
       </div>
+      <button type="button" class="menu-toggle" [attr.aria-expanded]="menuOpen()" aria-controls="mobile-route-menu" aria-label="Open route navigation" (click)="menuOpen.set(!menuOpen())">
+        <i class="pi" [class.pi-bars]="!menuOpen()" [class.pi-times]="menuOpen()"></i>
+      </button>
     </div>
+    @if (menuOpen()) {
+      <nav id="mobile-route-menu" class="mobile-nav" aria-label="Route categories">
+        <button type="button" [class.is-active]="navigation.activeCategory() === 'long'" (click)="selectCategory('long')">Long routes</button>
+        <button type="button" [class.is-active]="navigation.activeCategory() === 'short'" (click)="selectCategory('short')">Short routes</button>
+      </nav>
+    }
     <div class="header-stripe"></div>
   </header>
 

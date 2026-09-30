@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { RouteCategoryId, RouteNavigationService } from './services/route-navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.less',
 })
 export class AppComponent {
+  readonly navigation = inject(RouteNavigationService);
   currentYear = new Date().getFullYear();
+  readonly menuOpen = signal(false);
+
+  selectCategory(category: RouteCategoryId) {
+    this.navigation.selectCategory(category);
+    this.menuOpen.set(false);
+  }
 }

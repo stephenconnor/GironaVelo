@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Girona Velo</string>
+    <string name="title_activity_main">Girona Velo</string>
+    <string name="package_name">com.gironavelo.app</string>
+    <string name="custom_url_scheme">com.gironavelo.app</string>
+</resources>

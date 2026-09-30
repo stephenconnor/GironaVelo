@@ -13,7 +13,12 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
     "build:gh-pages": "ng build --configuration=github-pages",
-    "deploy": "npm run build:gh-pages && npx gh-pages -d dist/cycling-routes/browser"
+    "deploy": "npm run build:gh-pages && npx gh-pages -d dist/cycling-routes/browser",
+    "cap:add:android": "npx cap add android",
+    "cap:add:ios": "npx cap add ios",
+    "cap:sync": "npm run build && npx cap sync",
+    "cap:android": "npm run cap:sync && npx cap open android",
+    "cap:ios": "npm run cap:sync && npx cap open ios"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +30,11 @@
     "@angular/platform-browser": "^21.2.12",
     "@angular/platform-browser-dynamic": "^21.2.12",
     "@angular/router": "^21.2.12",
+    "@capacitor/android": "8.5.2",
+    "@capacitor/core": "8.5.2",
+    "@capacitor/filesystem": "^8.0.0",
+    "@capacitor/ios": "8.5.2",
+    "@capacitor/share": "^8.0.0",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@primeng/themes": "^21.0.4",
     "less": "^4.6.4",
@@ -38,6 +48,7 @@
     "@angular-devkit/build-angular": "^21.2.10",
     "@angular/cli": "^21.2.10",
     "@angular/compiler-cli": "^21.2.12",
+    "@capacitor/cli": "8.5.2",
     "@types/jasmine": "~5.1.0",
     "gh-pages": "^6.3.0",
     "jasmine-core": "~5.6.0",
